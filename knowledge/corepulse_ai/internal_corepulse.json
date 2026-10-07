@@ -1,0 +1,66 @@
+[
+  {
+    "id": "INT-REAL-OR-NA",
+    "topic": "general",
+    "title": "Política REAL_OR_NA de CorePulse",
+    "content": "CorePulse certifica telemetría real y conserva métricas ausentes como no disponibles. El módulo generativo no debe interpolar, corregir ni inventar sensores ausentes; la telemetría es la fuente de verdad.",
+    "source": "core/telemetry.py",
+    "tags": ["telemetria", "REAL_OR_NA", "N/A", "sensores", "trazabilidad"]
+  },
+  {
+    "id": "INT-AI-CONTEXT",
+    "topic": "system",
+    "title": "Contexto seguro para CorePulse AI",
+    "content": "La capa de cliente de CorePulse construye un contexto de ejecución con métricas finitas y evidencia acotada. La IA recibe evidencia sanitizada y no reemplaza la lógica determinista de diagnóstico ni la política de telemetría.",
+    "source": "core/ai_client.py",
+    "tags": ["contexto", "sistema", "seguridad", "telemetria"]
+  },
+  {
+    "id": "INT-SAFE-ACTIONS",
+    "topic": "system",
+    "title": "Regla de cambios sensibles",
+    "content": "CorePulse AI puede recomendar acciones, pero no debe ejecutar cambios sensibles del sistema sin confirmación explícita del usuario. Las acciones deben privilegiar reversibilidad, evidencia y rollback cuando corresponda.",
+    "source": "COREPULSE_NON_REGRESSION_CONTRACT.md",
+    "tags": ["windows", "confirmacion", "rollback", "seguridad"]
+  },
+  {
+    "id": "INT-CPU-DIAG",
+    "topic": "cpu",
+    "title": "Criterio interno de diagnóstico de CPU",
+    "content": "El diagnóstico debe separar observación de causalidad: uso alto y temperatura alta justifican revisar carga y refrigeración, pero no prueban por sí solos una causa específica. La conclusión debe conservar la evidencia observada y reconocer incertidumbre.",
+    "source": "core/diagnostic_summary.py",
+    "tags": ["cpu", "temperatura", "uso", "causalidad"]
+  },
+  {
+    "id": "INT-GPU-DIAG",
+    "topic": "gpu",
+    "title": "Criterio interno de GPU",
+    "content": "La telemetría GPU se presenta solo cuando existe una lectura válida. El diagnóstico no transforma ausencia de temperatura, carga o frecuencia en un valor estimado.",
+    "source": "core/telemetry.py",
+    "tags": ["gpu", "temperatura", "uso", "frecuencia"]
+  },
+  {
+    "id": "INT-MEMORY-DIAG",
+    "topic": "memory",
+    "title": "Criterio interno de memoria",
+    "content": "El uso de RAM es una observación de carga, no una prueba de daño físico. Antes de recomendar ampliación de memoria se debe correlacionar presión de memoria, carga real y comportamiento observado del sistema.",
+    "source": "core/ai_client.py",
+    "tags": ["ram", "memoria", "uso"]
+  },
+  {
+    "id": "INT-STORAGE-DIAG",
+    "topic": "storage",
+    "title": "Criterio interno de almacenamiento",
+    "content": "CorePulse separa uso/capacidad de almacenamiento de salud física. Una unidad llena no demuestra desgaste, y la salud debe apoyarse en evidencia SMART o contadores de confiabilidad cuando estén disponibles.",
+    "source": "core/storage_health.py",
+    "tags": ["ssd", "hdd", "smart", "almacenamiento", "salud"]
+  },
+  {
+    "id": "INT-NETWORK-DIAG",
+    "topic": "network",
+    "title": "Criterio interno de red",
+    "content": "La latencia de red solo se informa cuando existe una medición explícita. Si no se ejecutó una prueba o no hubo respuesta válida, la métrica debe mantenerse como N/A.",
+    "source": "core/network_details.py",
+    "tags": ["red", "latencia", "ping", "N/A"]
+  }
+]

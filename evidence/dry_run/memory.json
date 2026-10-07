@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.2",
+  "prompt_contract_version": "3.2",
+  "generated_at_utc": "2026-10-06T21:32:57.188821+00:00",
+  "query": "Analiza el uso de RAM y memoria.",
+  "route": "memory",
+  "conversation_context": [],
+  "telemetry_input": {
+    "cpu_usage": 45,
+    "ram_usage": 93
+  },
+  "hardware_context": {
+    "cpu_vendor": "N/A",
+    "cpu_model": "N/A"
+  },
+  "measured_data": {
+    "cpu_usage": "45 %",
+    "cpu_temperature": "N/A",
+    "gpu_usage": "N/A",
+    "gpu_temperature": "N/A",
+    "ram_usage": "93 %",
+    "storage_usage": "N/A",
+    "network_latency_ms": "N/A",
+    "system_status": "N/A"
+  },
+  "retrieved_sources": [
+    {
+      "id": "S1",
+      "chunk_id": "INT-MEMORY-DIAG",
+      "type": "internal",
+      "topic": "memory",
+      "title": "Criterio interno de memoria",
+      "source": "core/ai_client.py"
+    },
+    {
+      "id": "S2",
+      "chunk_id": "EXT-MS-MEMORY-FOOTPRINT",
+      "type": "external",
+      "topic": "memory",
+      "title": "Microsoft: análisis de presión y uso de memoria",
+      "source": "https://learn.microsoft.com/en-us/windows-hardware/test/wpt/memory-footprint-optimization"
+    },
+    {
+      "id": "S3",
+      "chunk_id": "EXT-MS-PERFORMANCE",
+      "type": "external",
+      "topic": "memory",
+      "title": "Microsoft: rendimiento y presión de recursos",
+      "source": "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows"
+    },
+    {
+      "id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "type": "internal",
+      "topic": "general",
+      "title": "Política REAL_OR_NA de CorePulse",
+      "source": "core/telemetry.py"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "source_id": "S1",
+      "chunk_id": "INT-MEMORY-DIAG",
+      "topic": "memory",
+      "source_type": "internal",
+      "score": 7.15,
+      "score_components": {
+        "token_overlap": 3,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S2",
+      "chunk_id": "EXT-MS-MEMORY-FOOTPRINT",
+      "topic": "memory",
+      "source_type": "external",
+      "score": 7.1,
+      "score_components": {
+        "token_overlap": 3,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S3",
+      "chunk_id": "EXT-MS-PERFORMANCE",
+      "topic": "memory",
+      "source_type": "external",
+      "score": 5.1,
+      "score_components": {
+        "token_overlap": 1,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "topic": "general",
+      "source_type": "internal",
+      "score": 1.15,
+      "score_components": {
+        "token_overlap": 0,
+        "route_bonus": 0.0,
+        "general_bonus": 1.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    }
+  ],
+  "provider": {
+    "name": "mock",
+    "model": "deterministic-test-provider",
+    "real_llm": false
+  },
+  "prompt_sha256": "ca3a6f74eda8de5a7bd692728aba63a42a02a33764b3f60478e9e01659698d92",
+  "generation_attempts": 1,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "response": {
+    "measured_data": {
+      "cpu_usage": "45 %",
+      "cpu_temperature": "N/A",
+      "gpu_usage": "N/A",
+      "gpu_temperature": "N/A",
+      "ram_usage": "93 %",
+      "storage_usage": "N/A",
+      "network_latency_ms": "N/A",
+      "system_status": "N/A"
+    },
+    "interpretation": "La interpretación requiere considerar únicamente los datos medidos y las fuentes recuperadas.",
+    "retrieved_information": [
+      "Se recuperó información técnica controlada [S1]."
+    ],
+    "recommendations": [
+      "Verificar condiciones de carga y refrigeración antes de aplicar cambios [S1]."
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "chunk_id": "INT-MEMORY-DIAG",
+        "type": "internal",
+        "topic": "memory",
+        "title": "Criterio interno de memoria",
+        "source": "core/ai_client.py"
+      },
+      {
+        "id": "S2",
+        "chunk_id": "EXT-MS-MEMORY-FOOTPRINT",
+        "type": "external",
+        "topic": "memory",
+        "title": "Microsoft: análisis de presión y uso de memoria",
+        "source": "https://learn.microsoft.com/en-us/windows-hardware/test/wpt/memory-footprint-optimization"
+      },
+      {
+        "id": "S3",
+        "chunk_id": "EXT-MS-PERFORMANCE",
+        "type": "external",
+        "topic": "memory",
+        "title": "Microsoft: rendimiento y presión de recursos",
+        "source": "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows"
+      },
+      {
+        "id": "S4",
+        "chunk_id": "INT-REAL-OR-NA",
+        "type": "internal",
+        "topic": "general",
+        "title": "Política REAL_OR_NA de CorePulse",
+        "source": "core/telemetry.py"
+      }
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  }
+}

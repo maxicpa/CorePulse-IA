@@ -1,0 +1,10 @@
+{
+  "cpu_usage": 51,
+  "cpu_temperature": 72,
+  "gpu_usage": 34,
+  "gpu_temperature": 61,
+  "ram_usage": 68,
+  "storage_usage": 71,
+  "network_latency_ms": 28,
+  "system_status": "NORMAL"
+}

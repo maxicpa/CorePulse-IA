@@ -1,0 +1,10 @@
+{
+  "cpu_usage": 76,
+  "cpu_temperature": 82,
+  "gpu_usage": 64,
+  "gpu_temperature": 70,
+  "ram_usage": 86,
+  "storage_usage": 79,
+  "network_latency_ms": 42,
+  "system_status": "DEGRADED"
+}

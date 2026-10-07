@@ -1,0 +1,147 @@
+[
+  {
+    "id": "EXT-AMD-RYZEN-5800H",
+    "topic": "cpu",
+    "title": "AMD Ryzen 7 5800H: especificación térmica oficial",
+    "content": "AMD publica para el Ryzen 7 5800H una temperatura máxima de funcionamiento (Tjmax) de 105 °C. Este límite corresponde específicamente a ese modelo y no debe extrapolarse a otros procesadores; el diagnóstico debe comparar la temperatura real con la ficha del modelo exacto y el contexto de carga.",
+    "source": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-7-5800h.html",
+    "tags": [
+      "amd",
+      "ryzen",
+      "5800h",
+      "cpu",
+      "temperatura",
+      "tjmax",
+      "thermal"
+    ]
+  },
+  {
+    "id": "EXT-AMD-PROCESSOR-SPECS",
+    "topic": "cpu",
+    "title": "AMD: Tjmax depende del modelo de procesador",
+    "content": "El catálogo oficial de especificaciones de procesadores AMD incluye la temperatura máxima de funcionamiento (Tjmax) por modelo. CorePulse debe usar la ficha del procesador AMD identificado y no aplicar límites térmicos de otro fabricante o modelo.",
+    "source": "https://www.amd.com/en/products/specifications/processors.html",
+    "tags": [
+      "amd",
+      "cpu",
+      "temperatura",
+      "tjmax",
+      "especificaciones"
+    ]
+  },
+  {
+    "id": "EXT-INTEL-TJUNCTION",
+    "topic": "cpu",
+    "title": "Intel: temperatura máxima de operación depende del procesador",
+    "content": "Intel indica que el límite máximo de temperatura de operación varía según el procesador y debe comprobarse en la especificación del modelo mediante Tjunction o Tcase. Por ello, una temperatura observada debe interpretarse con el modelo exacto y el contexto de carga.",
+    "source": "https://www.intel.com/content/www/us/en/support/articles/000094759/processors.html",
+    "tags": [
+      "intel",
+      "cpu",
+      "temperatura",
+      "tjunction",
+      "thermal"
+    ]
+  },
+  {
+    "id": "EXT-MS-TASKMANAGER",
+    "topic": "system",
+    "title": "Microsoft: Task Manager como monitor de recursos",
+    "content": "Microsoft describe el Administrador de tareas como un monitor del sistema que permite observar carga de CPU, uso de memoria, actividad de disco y uso de red. Estas observaciones ayudan a contextualizar consumo de recursos, pero no sustituyen la telemetría verificada de CorePulse.",
+    "source": "https://support.microsoft.com/en-us/windows/experience/system-configuration-tools-in-windows",
+    "tags": [
+      "microsoft",
+      "windows",
+      "cpu",
+      "memoria",
+      "disco",
+      "red"
+    ]
+  },
+  {
+    "id": "EXT-MS-PERFORMANCE",
+    "topic": "memory",
+    "title": "Microsoft: rendimiento y presión de recursos",
+    "content": "Microsoft señala que el rendimiento puede verse afectado por factores como espacio limitado, demasiadas aplicaciones de inicio o hardware insuficiente, por lo que se deben revisar varios factores antes de atribuir una causa única.",
+    "source": "https://support.microsoft.com/en-us/windows/experience/performance-optimization/tips-to-improve-pc-performance-in-windows",
+    "tags": [
+      "microsoft",
+      "windows",
+      "rendimiento",
+      "memoria",
+      "almacenamiento"
+    ]
+  },
+  {
+    "id": "EXT-MS-STORAGE-RELIABILITY",
+    "topic": "storage",
+    "title": "Microsoft: contadores de confiabilidad de almacenamiento",
+    "content": "Microsoft documenta Get-StorageReliabilityCounter para obtener contadores de confiabilidad de discos, incluidos temperatura, errores, desgaste y tiempo de uso. Estos datos pueden complementar el diagnóstico cuando el hardware y el proveedor los exponen.",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/storage/get-storagereliabilitycounter?view=windowsserver2025-ps",
+    "tags": [
+      "microsoft",
+      "storage",
+      "temperatura",
+      "desgaste",
+      "errores"
+    ]
+  },
+  {
+    "id": "EXT-MS-PHYSICAL-DISK",
+    "topic": "storage",
+    "title": "Microsoft: inventario de discos físicos",
+    "content": "Microsoft documenta Get-PhysicalDisk para enumerar discos físicos visibles mediante los proveedores de administración de almacenamiento. El inventario por sí solo no debe convertirse en una métrica de salud inventada.",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/storage/get-physicaldisk?view=windowsserver2025-ps",
+    "tags": [
+      "microsoft",
+      "storage",
+      "physicaldisk",
+      "inventario"
+    ]
+  },
+  {
+    "id": "EXT-NVIDIA-SMI",
+    "topic": "gpu",
+    "title": "NVIDIA System Management Interface: utilización y temperatura GPU",
+    "content": "La documentación oficial de NVIDIA indica que nvidia-smi puede exponer utilización y lecturas de temperatura de la GPU cuando el dispositivo las soporta. La disponibilidad depende del producto; una métrica no soportada no debe convertirse en un valor estimado.",
+    "source": "https://docs.nvidia.com/deploy/nvidia-smi/index.html",
+    "tags": [
+      "nvidia",
+      "gpu",
+      "utilizacion",
+      "temperatura",
+      "nvidia-smi",
+      "sensores"
+    ]
+  },
+  {
+    "id": "EXT-MS-PING",
+    "topic": "network",
+    "title": "Microsoft: ping y tiempos de ida y vuelta",
+    "content": "Microsoft documenta ping como una herramienta para comprobar conectividad IP mediante solicitudes y respuestas ICMP, mostrando tiempos de ida y vuelta. Una medición de latencia debe provenir de una prueba realizada; si no existe respuesta válida, CorePulse conserva N/A.",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ping",
+    "tags": [
+      "microsoft",
+      "windows",
+      "red",
+      "ping",
+      "latencia",
+      "icmp"
+    ]
+  },
+  {
+    "id": "EXT-MS-MEMORY-FOOTPRINT",
+    "topic": "memory",
+    "title": "Microsoft: análisis de presión y uso de memoria",
+    "content": "Microsoft señala que la memoria disponible influye en la capacidad de respuesta y que los problemas de memoria deben analizarse con herramientas de rendimiento y contexto de procesos. Un porcentaje alto de RAM no demuestra por sí solo daño físico ni identifica una causa única.",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/test/wpt/memory-footprint-optimization",
+    "tags": [
+      "microsoft",
+      "windows",
+      "ram",
+      "memoria",
+      "rendimiento",
+      "presion"
+    ]
+  }
+]

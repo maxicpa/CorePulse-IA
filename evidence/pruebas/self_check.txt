@@ -1,0 +1,16 @@
+CorePulse-IA · Self-check EP1
+===============================
+[PASS] estructura_academica: OK
+[PASS] ruta_cpu: route=cpu; fuentes=4; tipos=external,internal
+[PASS] ruta_gpu: route=gpu; fuentes=3; tipos=external,internal
+[PASS] ruta_memory: route=memory; fuentes=4; tipos=external,internal
+[PASS] ruta_storage: route=storage; fuentes=4; tipos=external,internal
+[PASS] ruta_network: route=network; fuentes=3; tipos=external,internal
+[PASS] ruta_system: route=system; fuentes=4; tipos=external,internal
+[PASS] ruta_general: route=general; fuentes=4; tipos=external,internal
+[PASS] telemetria_cpu_exacta: {"cpu_usage": "96 %", "cpu_temperature": "94 °C", "gpu_usage": "N/A", "gpu_temperature": "N/A", "ram_usage": "72 %", "storage_usage": "N/A", "network_latency_ms": "N/A", "system_status": "N/A"}
+[PASS] rag_amd_sin_intel: EXT-AMD-PROCESSOR-SPECS,EXT-AMD-RYZEN-5800H,INT-CPU-DIAG,INT-REAL-OR-NA
+[PASS] real_or_na_conservado: {"valid": true, "errors": [], "warnings": []}
+[PASS] alucinacion_na_detectada: {"valid": false, "errors": ["La interpretación inventa un valor concreto para cpu_temperature, que está N/A."], "warnings": []}
+
+RESULTADO: PASS

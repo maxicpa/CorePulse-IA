@@ -1,0 +1,68 @@
+{
+  "schema_version": "ep1-final-self-check-1",
+  "generated_at_utc": "2026-10-07T20:02:45.002440+00:00",
+  "project": "CorePulse-IA / ISY0101",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "estructura_academica",
+      "passed": true,
+      "detail": "OK"
+    },
+    {
+      "name": "ruta_cpu",
+      "passed": true,
+      "detail": "route=cpu; fuentes=4; tipos=external,internal"
+    },
+    {
+      "name": "ruta_gpu",
+      "passed": true,
+      "detail": "route=gpu; fuentes=3; tipos=external,internal"
+    },
+    {
+      "name": "ruta_memory",
+      "passed": true,
+      "detail": "route=memory; fuentes=4; tipos=external,internal"
+    },
+    {
+      "name": "ruta_storage",
+      "passed": true,
+      "detail": "route=storage; fuentes=4; tipos=external,internal"
+    },
+    {
+      "name": "ruta_network",
+      "passed": true,
+      "detail": "route=network; fuentes=3; tipos=external,internal"
+    },
+    {
+      "name": "ruta_system",
+      "passed": true,
+      "detail": "route=system; fuentes=4; tipos=external,internal"
+    },
+    {
+      "name": "ruta_general",
+      "passed": true,
+      "detail": "route=general; fuentes=4; tipos=external,internal"
+    },
+    {
+      "name": "telemetria_cpu_exacta",
+      "passed": true,
+      "detail": "{\"cpu_usage\": \"96 %\", \"cpu_temperature\": \"94 °C\", \"gpu_usage\": \"N/A\", \"gpu_temperature\": \"N/A\", \"ram_usage\": \"72 %\", \"storage_usage\": \"N/A\", \"network_latency_ms\": \"N/A\", \"system_status\": \"N/A\"}"
+    },
+    {
+      "name": "rag_amd_sin_intel",
+      "passed": true,
+      "detail": "EXT-AMD-PROCESSOR-SPECS,EXT-AMD-RYZEN-5800H,INT-CPU-DIAG,INT-REAL-OR-NA"
+    },
+    {
+      "name": "real_or_na_conservado",
+      "passed": true,
+      "detail": "{\"valid\": true, \"errors\": [], \"warnings\": []}"
+    },
+    {
+      "name": "alucinacion_na_detectada",
+      "passed": true,
+      "detail": "{\"valid\": false, \"errors\": [\"La interpretación inventa un valor concreto para cpu_temperature, que está N/A.\"], \"warnings\": []}"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.2",
+  "prompt_contract_version": "3.2",
+  "generated_at_utc": "2026-10-06T21:32:57.188036+00:00",
+  "query": "Analiza el uso y la temperatura de CPU.",
+  "route": "cpu",
+  "conversation_context": [],
+  "telemetry_input": {
+    "cpu_vendor": "AMD",
+    "cpu_model": "AMD Ryzen 7 5800H",
+    "cpu_usage": 96,
+    "cpu_temperature": 94,
+    "ram_usage": 72
+  },
+  "hardware_context": {
+    "cpu_vendor": "AMD",
+    "cpu_model": "AMD Ryzen 7 5800H"
+  },
+  "measured_data": {
+    "cpu_usage": "96 %",
+    "cpu_temperature": "94 °C",
+    "gpu_usage": "N/A",
+    "gpu_temperature": "N/A",
+    "ram_usage": "72 %",
+    "storage_usage": "N/A",
+    "network_latency_ms": "N/A",
+    "system_status": "N/A"
+  },
+  "retrieved_sources": [
+    {
+      "id": "S1",
+      "chunk_id": "EXT-AMD-RYZEN-5800H",
+      "type": "external",
+      "topic": "cpu",
+      "title": "AMD Ryzen 7 5800H: especificación térmica oficial",
+      "source": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-7-5800h.html"
+    },
+    {
+      "id": "S2",
+      "chunk_id": "EXT-AMD-PROCESSOR-SPECS",
+      "type": "external",
+      "topic": "cpu",
+      "title": "AMD: Tjmax depende del modelo de procesador",
+      "source": "https://www.amd.com/en/products/specifications/processors.html"
+    },
+    {
+      "id": "S3",
+      "chunk_id": "INT-CPU-DIAG",
+      "type": "internal",
+      "topic": "cpu",
+      "title": "Criterio interno de diagnóstico de CPU",
+      "source": "core/diagnostic_summary.py"
+    },
+    {
+      "id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "type": "internal",
+      "topic": "general",
+      "title": "Política REAL_OR_NA de CorePulse",
+      "source": "core/telemetry.py"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "source_id": "S1",
+      "chunk_id": "EXT-AMD-RYZEN-5800H",
+      "topic": "cpu",
+      "source_type": "external",
+      "score": 10.6,
+      "score_components": {
+        "token_overlap": 2,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 3.0,
+        "model_bonus": 1.5
+      },
+      "vendor_policy": "vendor_match",
+      "selection_reason": "ranked_vendor_match"
+    },
+    {
+      "source_id": "S2",
+      "chunk_id": "EXT-AMD-PROCESSOR-SPECS",
+      "topic": "cpu",
+      "source_type": "external",
+      "score": 9.6,
+      "score_components": {
+        "token_overlap": 2,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 3.0,
+        "model_bonus": 0.5
+      },
+      "vendor_policy": "vendor_match",
+      "selection_reason": "ranked_vendor_match"
+    },
+    {
+      "source_id": "S3",
+      "chunk_id": "INT-CPU-DIAG",
+      "topic": "cpu",
+      "source_type": "internal",
+      "score": 7.15,
+      "score_components": {
+        "token_overlap": 3,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "topic": "general",
+      "source_type": "internal",
+      "score": 1.15,
+      "score_components": {
+        "token_overlap": 0,
+        "route_bonus": 0.0,
+        "general_bonus": 1.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    }
+  ],
+  "provider": {
+    "name": "mock",
+    "model": "deterministic-test-provider",
+    "real_llm": false
+  },
+  "prompt_sha256": "5319b3749ffba5ee87d194db51d696e92fec614890ba8270929eac30e030703f",
+  "generation_attempts": 1,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "response": {
+    "measured_data": {
+      "cpu_usage": "96 %",
+      "cpu_temperature": "94 °C",
+      "gpu_usage": "N/A",
+      "gpu_temperature": "N/A",
+      "ram_usage": "72 %",
+      "storage_usage": "N/A",
+      "network_latency_ms": "N/A",
+      "system_status": "N/A"
+    },
+    "interpretation": "La interpretación requiere considerar únicamente los datos medidos y las fuentes recuperadas.",
+    "retrieved_information": [
+      "Se recuperó información técnica controlada [S1]."
+    ],
+    "recommendations": [
+      "Verificar condiciones de carga y refrigeración antes de aplicar cambios [S1]."
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "chunk_id": "EXT-AMD-RYZEN-5800H",
+        "type": "external",
+        "topic": "cpu",
+        "title": "AMD Ryzen 7 5800H: especificación térmica oficial",
+        "source": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-7-5800h.html"
+      },
+      {
+        "id": "S2",
+        "chunk_id": "EXT-AMD-PROCESSOR-SPECS",
+        "type": "external",
+        "topic": "cpu",
+        "title": "AMD: Tjmax depende del modelo de procesador",
+        "source": "https://www.amd.com/en/products/specifications/processors.html"
+      },
+      {
+        "id": "S3",
+        "chunk_id": "INT-CPU-DIAG",
+        "type": "internal",
+        "topic": "cpu",
+        "title": "Criterio interno de diagnóstico de CPU",
+        "source": "core/diagnostic_summary.py"
+      },
+      {
+        "id": "S4",
+        "chunk_id": "INT-REAL-OR-NA",
+        "type": "internal",
+        "topic": "general",
+        "title": "Política REAL_OR_NA de CorePulse",
+        "source": "core/telemetry.py"
+      }
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  }
+}

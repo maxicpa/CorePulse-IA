@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.2",
+  "prompt_contract_version": "3.2",
+  "generated_at_utc": "2026-10-06T21:32:57.189928+00:00",
+  "query": "Analiza la salud del sistema Windows.",
+  "route": "system",
+  "conversation_context": [],
+  "telemetry_input": {
+    "cpu_usage": 76,
+    "cpu_temperature": 82,
+    "gpu_usage": 64,
+    "gpu_temperature": 70,
+    "ram_usage": 86,
+    "storage_usage": 79,
+    "network_latency_ms": 42,
+    "system_status": "DEGRADED"
+  },
+  "hardware_context": {
+    "cpu_vendor": "N/A",
+    "cpu_model": "N/A"
+  },
+  "measured_data": {
+    "cpu_usage": "76 %",
+    "cpu_temperature": "82 °C",
+    "gpu_usage": "64 %",
+    "gpu_temperature": "70 °C",
+    "ram_usage": "86 %",
+    "storage_usage": "79 %",
+    "network_latency_ms": "42 ms",
+    "system_status": "DEGRADED"
+  },
+  "retrieved_sources": [
+    {
+      "id": "S1",
+      "chunk_id": "INT-SAFE-ACTIONS",
+      "type": "internal",
+      "topic": "system",
+      "title": "Regla de cambios sensibles",
+      "source": "COREPULSE_NON_REGRESSION_CONTRACT.md"
+    },
+    {
+      "id": "S2",
+      "chunk_id": "EXT-MS-TASKMANAGER",
+      "type": "external",
+      "topic": "system",
+      "title": "Microsoft: Task Manager como monitor de recursos",
+      "source": "https://support.microsoft.com/en-us/windows/experience/system-configuration-tools-in-windows"
+    },
+    {
+      "id": "S3",
+      "chunk_id": "INT-AI-CONTEXT",
+      "type": "internal",
+      "topic": "system",
+      "title": "Contexto seguro para CorePulse AI",
+      "source": "core/ai_client.py"
+    },
+    {
+      "id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "type": "internal",
+      "topic": "general",
+      "title": "Política REAL_OR_NA de CorePulse",
+      "source": "core/telemetry.py"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "source_id": "S1",
+      "chunk_id": "INT-SAFE-ACTIONS",
+      "topic": "system",
+      "source_type": "internal",
+      "score": 7.15,
+      "score_components": {
+        "token_overlap": 3,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S2",
+      "chunk_id": "EXT-MS-TASKMANAGER",
+      "topic": "system",
+      "source_type": "external",
+      "score": 7.1,
+      "score_components": {
+        "token_overlap": 3,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S3",
+      "chunk_id": "INT-AI-CONTEXT",
+      "topic": "system",
+      "source_type": "internal",
+      "score": 5.15,
+      "score_components": {
+        "token_overlap": 1,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "topic": "general",
+      "source_type": "internal",
+      "score": 1.15,
+      "score_components": {
+        "token_overlap": 0,
+        "route_bonus": 0.0,
+        "general_bonus": 1.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    }
+  ],
+  "provider": {
+    "name": "mock",
+    "model": "deterministic-test-provider",
+    "real_llm": false
+  },
+  "prompt_sha256": "a9604e1df47e3ec30aa1c5dcb69aceb908ae956d0355621422d5892fbc8e5bf2",
+  "generation_attempts": 1,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "response": {
+    "measured_data": {
+      "cpu_usage": "76 %",
+      "cpu_temperature": "82 °C",
+      "gpu_usage": "64 %",
+      "gpu_temperature": "70 °C",
+      "ram_usage": "86 %",
+      "storage_usage": "79 %",
+      "network_latency_ms": "42 ms",
+      "system_status": "DEGRADED"
+    },
+    "interpretation": "La interpretación requiere considerar únicamente los datos medidos y las fuentes recuperadas.",
+    "retrieved_information": [
+      "Se recuperó información técnica controlada [S1]."
+    ],
+    "recommendations": [
+      "Verificar condiciones de carga y refrigeración antes de aplicar cambios [S1]."
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "chunk_id": "INT-SAFE-ACTIONS",
+        "type": "internal",
+        "topic": "system",
+        "title": "Regla de cambios sensibles",
+        "source": "COREPULSE_NON_REGRESSION_CONTRACT.md"
+      },
+      {
+        "id": "S2",
+        "chunk_id": "EXT-MS-TASKMANAGER",
+        "type": "external",
+        "topic": "system",
+        "title": "Microsoft: Task Manager como monitor de recursos",
+        "source": "https://support.microsoft.com/en-us/windows/experience/system-configuration-tools-in-windows"
+      },
+      {
+        "id": "S3",
+        "chunk_id": "INT-AI-CONTEXT",
+        "type": "internal",
+        "topic": "system",
+        "title": "Contexto seguro para CorePulse AI",
+        "source": "core/ai_client.py"
+      },
+      {
+        "id": "S4",
+        "chunk_id": "INT-REAL-OR-NA",
+        "type": "internal",
+        "topic": "general",
+        "title": "Política REAL_OR_NA de CorePulse",
+        "source": "core/telemetry.py"
+      }
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  }
+}

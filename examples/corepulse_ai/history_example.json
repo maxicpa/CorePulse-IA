@@ -1,0 +1,4 @@
+[
+  {"role": "user", "content": "Antes revisamos el uso de CPU."},
+  {"role": "assistant", "content": "Se observaron métricas reales y no se confirmó una causa única."}
+]

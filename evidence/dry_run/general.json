@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.2",
+  "prompt_contract_version": "3.2",
+  "generated_at_utc": "2026-10-06T21:32:57.190432+00:00",
+  "query": "Dame una evaluación general del equipo.",
+  "route": "general",
+  "conversation_context": [],
+  "telemetry_input": {
+    "cpu_usage": 51,
+    "cpu_temperature": 72,
+    "gpu_usage": 34,
+    "gpu_temperature": 61,
+    "ram_usage": 68,
+    "storage_usage": 71,
+    "network_latency_ms": 28,
+    "system_status": "NORMAL"
+  },
+  "hardware_context": {
+    "cpu_vendor": "N/A",
+    "cpu_model": "N/A"
+  },
+  "measured_data": {
+    "cpu_usage": "51 %",
+    "cpu_temperature": "72 °C",
+    "gpu_usage": "34 %",
+    "gpu_temperature": "61 °C",
+    "ram_usage": "68 %",
+    "storage_usage": "71 %",
+    "network_latency_ms": "28 ms",
+    "system_status": "NORMAL"
+  },
+  "retrieved_sources": [
+    {
+      "id": "S1",
+      "chunk_id": "INT-REAL-OR-NA",
+      "type": "internal",
+      "topic": "general",
+      "title": "Política REAL_OR_NA de CorePulse",
+      "source": "core/telemetry.py"
+    },
+    {
+      "id": "S2",
+      "chunk_id": "INT-MEMORY-DIAG",
+      "type": "internal",
+      "topic": "memory",
+      "title": "Criterio interno de memoria",
+      "source": "core/ai_client.py"
+    },
+    {
+      "id": "S3",
+      "chunk_id": "EXT-AMD-RYZEN-5800H",
+      "type": "external",
+      "topic": "cpu",
+      "title": "AMD Ryzen 7 5800H: especificación térmica oficial",
+      "source": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-7-5800h.html"
+    },
+    {
+      "id": "S4",
+      "chunk_id": "EXT-INTEL-TJUNCTION",
+      "type": "external",
+      "topic": "cpu",
+      "title": "Intel: temperatura máxima de operación depende del procesador",
+      "source": "https://www.intel.com/content/www/us/en/support/articles/000094759/processors.html"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "source_id": "S1",
+      "chunk_id": "INT-REAL-OR-NA",
+      "topic": "general",
+      "source_type": "internal",
+      "score": 6.15,
+      "score_components": {
+        "token_overlap": 1,
+        "route_bonus": 4.0,
+        "general_bonus": 1.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S2",
+      "chunk_id": "INT-MEMORY-DIAG",
+      "topic": "memory",
+      "source_type": "internal",
+      "score": 2.15,
+      "score_components": {
+        "token_overlap": 2,
+        "route_bonus": 0.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S3",
+      "chunk_id": "EXT-AMD-RYZEN-5800H",
+      "topic": "cpu",
+      "source_type": "external",
+      "score": 2.1,
+      "score_components": {
+        "token_overlap": 2,
+        "route_bonus": 0.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S4",
+      "chunk_id": "EXT-INTEL-TJUNCTION",
+      "topic": "cpu",
+      "source_type": "external",
+      "score": 2.1,
+      "score_components": {
+        "token_overlap": 2,
+        "route_bonus": 0.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    }
+  ],
+  "provider": {
+    "name": "mock",
+    "model": "deterministic-test-provider",
+    "real_llm": false
+  },
+  "prompt_sha256": "40f32be6fe7f51267096f5264154d524bbc3bc68b069a10521eef05ef4002fe8",
+  "generation_attempts": 1,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "response": {
+    "measured_data": {
+      "cpu_usage": "51 %",
+      "cpu_temperature": "72 °C",
+      "gpu_usage": "34 %",
+      "gpu_temperature": "61 °C",
+      "ram_usage": "68 %",
+      "storage_usage": "71 %",
+      "network_latency_ms": "28 ms",
+      "system_status": "NORMAL"
+    },
+    "interpretation": "La interpretación requiere considerar únicamente los datos medidos y las fuentes recuperadas.",
+    "retrieved_information": [
+      "Se recuperó información técnica controlada [S1]."
+    ],
+    "recommendations": [
+      "Verificar condiciones de carga y refrigeración antes de aplicar cambios [S1]."
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "chunk_id": "INT-REAL-OR-NA",
+        "type": "internal",
+        "topic": "general",
+        "title": "Política REAL_OR_NA de CorePulse",
+        "source": "core/telemetry.py"
+      },
+      {
+        "id": "S2",
+        "chunk_id": "INT-MEMORY-DIAG",
+        "type": "internal",
+        "topic": "memory",
+        "title": "Criterio interno de memoria",
+        "source": "core/ai_client.py"
+      },
+      {
+        "id": "S3",
+        "chunk_id": "EXT-AMD-RYZEN-5800H",
+        "type": "external",
+        "topic": "cpu",
+        "title": "AMD Ryzen 7 5800H: especificación térmica oficial",
+        "source": "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-5000-series/amd-ryzen-7-5800h.html"
+      },
+      {
+        "id": "S4",
+        "chunk_id": "EXT-INTEL-TJUNCTION",
+        "type": "external",
+        "topic": "cpu",
+        "title": "Intel: temperatura máxima de operación depende del procesador",
+        "source": "https://www.intel.com/content/www/us/en/support/articles/000094759/processors.html"
+      }
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  }
+}

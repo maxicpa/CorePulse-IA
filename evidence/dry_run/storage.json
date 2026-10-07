@@ -1,0 +1,204 @@
+{
+  "schema_version": "1.2",
+  "prompt_contract_version": "3.2",
+  "generated_at_utc": "2026-10-06T21:32:57.189281+00:00",
+  "query": "Analiza el uso del SSD y almacenamiento.",
+  "route": "storage",
+  "conversation_context": [],
+  "telemetry_input": {
+    "storage_usage": 94,
+    "cpu_usage": 24,
+    "ram_usage": 52
+  },
+  "hardware_context": {
+    "cpu_vendor": "N/A",
+    "cpu_model": "N/A"
+  },
+  "measured_data": {
+    "cpu_usage": "24 %",
+    "cpu_temperature": "N/A",
+    "gpu_usage": "N/A",
+    "gpu_temperature": "N/A",
+    "ram_usage": "52 %",
+    "storage_usage": "94 %",
+    "network_latency_ms": "N/A",
+    "system_status": "N/A"
+  },
+  "retrieved_sources": [
+    {
+      "id": "S1",
+      "chunk_id": "INT-STORAGE-DIAG",
+      "type": "internal",
+      "topic": "storage",
+      "title": "Criterio interno de almacenamiento",
+      "source": "core/storage_health.py"
+    },
+    {
+      "id": "S2",
+      "chunk_id": "EXT-MS-STORAGE-RELIABILITY",
+      "type": "external",
+      "topic": "storage",
+      "title": "Microsoft: contadores de confiabilidad de almacenamiento",
+      "source": "https://learn.microsoft.com/en-us/powershell/module/storage/get-storagereliabilitycounter?view=windowsserver2025-ps"
+    },
+    {
+      "id": "S3",
+      "chunk_id": "EXT-MS-PHYSICAL-DISK",
+      "type": "external",
+      "topic": "storage",
+      "title": "Microsoft: inventario de discos físicos",
+      "source": "https://learn.microsoft.com/en-us/powershell/module/storage/get-physicaldisk?view=windowsserver2025-ps"
+    },
+    {
+      "id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "type": "internal",
+      "topic": "general",
+      "title": "Política REAL_OR_NA de CorePulse",
+      "source": "core/telemetry.py"
+    }
+  ],
+  "retrieval_trace": [
+    {
+      "source_id": "S1",
+      "chunk_id": "INT-STORAGE-DIAG",
+      "topic": "storage",
+      "source_type": "internal",
+      "score": 7.15,
+      "score_components": {
+        "token_overlap": 3,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S2",
+      "chunk_id": "EXT-MS-STORAGE-RELIABILITY",
+      "topic": "storage",
+      "source_type": "external",
+      "score": 6.1,
+      "score_components": {
+        "token_overlap": 2,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S3",
+      "chunk_id": "EXT-MS-PHYSICAL-DISK",
+      "topic": "storage",
+      "source_type": "external",
+      "score": 5.1,
+      "score_components": {
+        "token_overlap": 1,
+        "route_bonus": 4.0,
+        "general_bonus": 0.0,
+        "source_type_bonus": 0.1,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    },
+    {
+      "source_id": "S4",
+      "chunk_id": "INT-REAL-OR-NA",
+      "topic": "general",
+      "source_type": "internal",
+      "score": 1.15,
+      "score_components": {
+        "token_overlap": 0,
+        "route_bonus": 0.0,
+        "general_bonus": 1.0,
+        "source_type_bonus": 0.15,
+        "vendor_bonus": 0.0,
+        "model_bonus": 0.0
+      },
+      "vendor_policy": "not_applicable",
+      "selection_reason": "ranked"
+    }
+  ],
+  "provider": {
+    "name": "mock",
+    "model": "deterministic-test-provider",
+    "real_llm": false
+  },
+  "prompt_sha256": "b54302673c3b87ee0c745956a29446fa0486e3b233734d35be55687e2d63df60",
+  "generation_attempts": 1,
+  "validation_attempts": [
+    {
+      "attempt": 1,
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "response": {
+    "measured_data": {
+      "cpu_usage": "24 %",
+      "cpu_temperature": "N/A",
+      "gpu_usage": "N/A",
+      "gpu_temperature": "N/A",
+      "ram_usage": "52 %",
+      "storage_usage": "94 %",
+      "network_latency_ms": "N/A",
+      "system_status": "N/A"
+    },
+    "interpretation": "La interpretación requiere considerar únicamente los datos medidos y las fuentes recuperadas.",
+    "retrieved_information": [
+      "Se recuperó información técnica controlada [S1]."
+    ],
+    "recommendations": [
+      "Verificar condiciones de carga y refrigeración antes de aplicar cambios [S1]."
+    ],
+    "sources": [
+      {
+        "id": "S1",
+        "chunk_id": "INT-STORAGE-DIAG",
+        "type": "internal",
+        "topic": "storage",
+        "title": "Criterio interno de almacenamiento",
+        "source": "core/storage_health.py"
+      },
+      {
+        "id": "S2",
+        "chunk_id": "EXT-MS-STORAGE-RELIABILITY",
+        "type": "external",
+        "topic": "storage",
+        "title": "Microsoft: contadores de confiabilidad de almacenamiento",
+        "source": "https://learn.microsoft.com/en-us/powershell/module/storage/get-storagereliabilitycounter?view=windowsserver2025-ps"
+      },
+      {
+        "id": "S3",
+        "chunk_id": "EXT-MS-PHYSICAL-DISK",
+        "type": "external",
+        "topic": "storage",
+        "title": "Microsoft: inventario de discos físicos",
+        "source": "https://learn.microsoft.com/en-us/powershell/module/storage/get-physicaldisk?view=windowsserver2025-ps"
+      },
+      {
+        "id": "S4",
+        "chunk_id": "INT-REAL-OR-NA",
+        "type": "internal",
+        "topic": "general",
+        "title": "Política REAL_OR_NA de CorePulse",
+        "source": "core/telemetry.py"
+      }
+    ]
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  }
+}
