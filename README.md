@@ -44,15 +44,54 @@ py -3.12 tools\isy0101_self_check.py
 
 También están disponibles `scripts\01_preparar_entorno.bat` y `scripts\02_pruebas.bat`.
 
-## Demo con Groq
+## Demo real con Groq
 
-Configurar `GROQ_API_KEY` de forma local y ejecutar:
+La demo real es opcional. Para ejecutarla se necesita una cuenta de Groq y una API key propia. **No compartir ni subir la clave al repositorio.**
+
+En PowerShell puede configurarse solo para la sesión actual:
 
 ```powershell
-py -3.12 tools\corepulse_ai_cli.py --provider groq --query "Analiza el uso y la temperatura de CPU porque el PC esta funcionando lento." --telemetry examples\corepulse_ai\telemetry_cpu_hot.json --evidence evidence\demo_llm_real_nuevo.json
+$env:GROQ_API_KEY="TU_API_KEY"
 ```
 
-La evidencia solo se guarda si el proveedor es real y `validation.valid = true`.
+### Caso 1 · Temperatura disponible
+
+Este caso usa el ejemplo reproducible con CPU `96 %`, temperatura `94 °C` y RAM `72 %`:
+
+```powershell
+py -3.12 tools\corepulse_ai_cli.py --provider groq --query "Analiza el uso y la temperatura de CPU porque el PC esta funcionando lento." --telemetry examples\corepulse_ai\telemetry_cpu_hot.json
+```
+
+El resultado esperado debe incluir:
+
+```text
+provider.name = groq
+provider.real_llm = true
+validation.valid = true
+```
+
+### Caso 2 · REAL_OR_NA
+
+Este caso usa intencionalmente una temperatura `N/A` para demostrar que CorePulse-IA **no inventa una medición ausente**:
+
+```powershell
+py -3.12 tools\corepulse_ai_cli.py --provider groq --query "Analiza la CPU. Si no existe temperatura real, no la inventes." --telemetry examples\corepulse_ai\telemetry_cpu_na.json
+```
+
+El resultado esperado debe conservar:
+
+```text
+cpu_temperature = N/A
+validation.valid = true
+```
+
+Al terminar la prueba, la variable temporal puede eliminarse con:
+
+```powershell
+Remove-Item Env:GROQ_API_KEY
+```
+
+Las evidencias reales ya incluidas en el repositorio están en `evidence/demo_llm_real.json` y `evidence/demo_llm_real_na.json`. La evidencia nueva solo se guarda si el proveedor es real y `validation.valid = true`.
 
 ## Casos reproducibles
 
